@@ -1,0 +1,44 @@
+﻿@model List<Student>
+
+<link href="~/css/table.css" rel="stylesheet" />
+@* this ~ sign indicates that "wwwroot" the css folder is in the root directory of the project. *@
+<table>
+    <tr>
+        <th>Student name</th>
+        <th>Student age</th>
+        <th>Delete</th>
+    </tr>
+        @foreach (Student student in Model)
+        {
+        <tr>
+            <td>@student.StudentName</td>
+            <td>@student.StudentAge</td>
+            <td><a href="/Student/Delete/@student.Id">delete @student.StudentName</a></td>
+        </tr>
+
+        }
+</table>
+
+
+
+@*
+<style>
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    tr:nth-of-type(odd){
+        background-color: #eee;
+    }
+    th{
+        background-color: #333;
+        color: white;
+        font-weight: bold;
+    }
+    td, th{
+        padding: 6px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+</style>
+ *@
